@@ -1,0 +1,10 @@
+{
+  "name": "saas-signup",
+  "version": "1.0.0",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./input.css -o ./wwwroot/css/output.css"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
