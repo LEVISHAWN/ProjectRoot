@@ -13,6 +13,7 @@ builder.Services.AddAuthorization();
 // Register IAuthService with MockAuthService
 builder.Services.AddSingleton<IAuthService, MockAuthService>();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,14 +27,6 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}");
-});
-
 app.MapControllers();
 app.MapFallbackToFile("index.html");
 
